@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+{% if form %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% else %}
+    <p>{{ data.name }}</p>
+    <p>{{ data.surname }}</p>
+    <p>{{ data.email }}</p>
+    <p>{{ data.favourite_www }}</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <p>Metryka studenta: </p>
+    <ul>
+        {% if student %}
+            <li>Imię: {{ student.0.first_name }}</li>
+            <li>Nazwisko: {{ student.0.last_name }}</li>
+            <li>Klasa: {{ student.0.get_school_class_display }}</li>
+        {% endif %}
+    </ul>
+
+    <p>Lista przedmiotów: </p>
+    {% for subject in subjects %}
+        <a href='/grades/{{ student.0.id }}/{{subject.id}}'>{{ subject.name }}</a><br>
+    {%endfor%}
+
+{% endblock %}

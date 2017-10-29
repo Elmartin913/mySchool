@@ -1,0 +1,8 @@
+<h2>Lista studentow</h2>
+{% if students %}
+    {% for s in students %}
+            <a href='/student/{{ s.id }}'>{{ s }}</a><br>
+    {% endfor %}
+{% else %}
+    <h3>Klasa pusta</h3>
+{% endif %}
